@@ -7,9 +7,10 @@ async function showMovies() {
   const data = await answer.json();
   const movies = data.Search;
 
-  movies.forEach((movie, index) => {
+  movies.forEach((movie) => {
     container.innerHTML += ` <div class="card">
     <div class="card-img" style="background-image: url(${movie.Poster});">
+    <i class="fa-solid fa-circle-play play-icon"></i>
     </div>
     <div class="card-info">
       <div class="card-info-header">
