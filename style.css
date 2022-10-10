@@ -29,42 +29,27 @@ body.light-mode {
 }
 
 #modes {
-  min-width: 200px;
-  height: 30px;
+  min-width: 170px;
+  height: 40px;
   border-radius: 30px;
   display: flex;
-  align-content: center;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  gap: 10px;
   box-shadow: 0px 3px 20px gray;
-  background-color: white;
-  margin: 30px 0;
+  background-color: var(--color-titulo);
   position: relative;
-}
-
-#modes span {
-  font-size: 20px;
-  border-radius: 50%;
-}
-
-.indicator {
-  position: absolute;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: white;
-  box-shadow: 0px 3px 20px gray;
-  right: 0;
+  margin: 30px 0;
+  font-size: 18px;
+  color: var(--color-primario);
 }
 
-.indicator.night {
-  background-color: black;
-  box-shadow: 0px 3px 20px white;
-  left: 0;
-}
 
-#modes.night {
-  background-color: black;
+#modes.night-mode {
+  background-color: var(--color-titulo);
+  color: var(--color-primario);
   box-shadow: 0px 3px 20px white;
 }
 
@@ -90,6 +75,7 @@ body.light-mode {
   padding: 15px;
   transition: 0.7s;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
+  cursor: pointer;
 }
 
 .card-img {
@@ -114,6 +100,7 @@ body.light-mode {
 .card-info-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 15px;
 }
 

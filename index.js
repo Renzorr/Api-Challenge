@@ -1,16 +1,6 @@
 const container = document.querySelector(".main-container");
 const modes = document.querySelector("#modes");
-const indicator = document.querySelector(".indicator");
 const url = "https://www.omdbapi.com/?s=avengers&apikey=4b229795&";
-
-
-
-indicator.addEventListener("click", () => {
-  modes.classList.toggle("night");
-  indicator.classList.toggle("night");
-  document.body.classList.toggle("light-mode");
-});
-
 
 async function showMovies() {
   const answer = await fetch(url);
@@ -24,7 +14,7 @@ async function showMovies() {
     <div class="card-info">
       <div class="card-info-header">
           <h1>${movie.Title}</h1>
-          <i class='fa fa-film film-icon'></i>
+          <i class="fa-solid fa-film film-icon"></i>
       </div>
       <p>
        ${movie.Type}
@@ -32,8 +22,16 @@ async function showMovies() {
     </div>
   </div>`;
   });
-
-
 }
 
 showMovies();
+
+modes.addEventListener("click", () => {
+  if (modes.className != "night-mode") {
+    modes.innerHTML = `<i class="fa-solid fa-moon"></i>Dark Mode`;
+  } else {
+    modes.innerHTML = `<i class="fa-solid fa-sun"></i>Light Mode`;
+  }
+  modes.classList.toggle("night-mode");
+  document.body.classList.toggle("light-mode");
+});
